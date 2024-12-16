@@ -1,0 +1,24 @@
+{
+  "name": "bin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "esbuild app/javascript/**/*.* --bundle --sourcemap --outdir=app/assets/builds --watch",
+    "build:css": "tailwindcss -i app/assets/stylesheets/application.css -o app/assets/builds/application.css --minify",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/josechan202/fc-assessment.git"
+  },
+  "private": true,
+  "devDependencies": {
+    "esbuild": "^0.24.0"
+  },
+  "dependencies": {
+    "@rails/actiontext": "^8.0.100",
+    "trix": "^2.1.10"
+  }
+}

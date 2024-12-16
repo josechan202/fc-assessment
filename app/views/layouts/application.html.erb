@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) || "Fc Assessment" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <nav class="bg-blue-600 text-white p-4">
+      <div class="container mx-auto flex justify-between items-center">
+
+
+        <a href="/" class="text-lg font-bold">Flex Car Assessment</a>
+
+        <!--navbar-->
+        <ul class="flex space-x-4">
+          <li><%= link_to "Home", root_path, class: "hover:text-gray-300" %></li>
+          <li><%= link_to "Categories", categories_path, class: "hover:text-gray-300" %></li>
+          <li><%= link_to "Items", items_path, class: "hover:text-gray-300" %></li>
+          <li><%= link_to "Cart", cart_path(session[:current_cart_id]), class: "hover:text-gray-300" %></li>
+        </ul>
+      </div>
+    </nav>
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  </head>
+
+  <body>
+    <main class="container mx-auto mt-28 px-5 flex">
+      <%= yield %>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<div id="<%= dom_id category %>" class="partial" onclick="window.location.href='<%= edit_category_path(category.id) %>'">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Name:</strong>
+    <%= category.name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Description:</strong>
+    <%= category.description %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Total items:</strong>
+    <%= Item.where(category_id: category.id).count %>
+  </p>
+
+  <!--  Todo-->
+  <button>See all <%=Category.find(category.id).name %></button>
+
+
+</div>
